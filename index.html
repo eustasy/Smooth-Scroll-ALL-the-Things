@@ -12,7 +12,7 @@
 		<title>Smooth Scroll ALL the Things &nbsp;&middot;&nbsp; eustasy Labs</title>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic">
 		<link rel="stylesheet" href="http://labs.eustasy.org/style.css">
-		<link rel="stylesheet" href="http://labs.eustasy.org/Smooth-Scroll-ALL-the-Things/SSALL.css">
+		<style>#maincontent{max-width:700px;margin:0 auto}input,textarea{width:96%;outline:0;padding:2%;margin:2% 0;border:1px solid #aaa;background:#eee;color:#111;-webkit-border-radius:3px;border-radius:3px}textarea{resize:vertical}p{text-align:justify}</style>
 		<script async src="http://labs.eustasy.org/js/modernizr.min.js"></script>
 		<script async>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -69,7 +69,7 @@
 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-		<script src="jquery.smoothScrollALLtheThings.js"></script>
+		<script>function WheelSSALL(e){var t=0;if(e.wheelDelta)DeltaSSALL=-e.wheelDelta*2;else if(e.detail)DeltaSSALL=e.detail*3;HandleSSALL(DeltaSSALL);if(e.preventDefault)e.preventDefault()}function HandleSSALL(e){var t=1e3;$('html, body').stop().animate({scrollTop:$(window).scrollTop()+e},t)}$(window).keydown(function(e){if(e.target.tagName.toLowerCase()!=='input'&&e.target.tagName.toLowerCase()!=='textarea'){switch(e.which){case 37:HandleSSALL(-200);break;case 38:HandleSSALL(-200);break;case 39:HandleSSALL(200);break;case 40:HandleSSALL(200);break;case 32:HandleSSALL(500);break;default:return}if(event.preventDefault)event.preventDefault()}});if(window.addEventListener)window.addEventListener('DOMMouseScroll',WheelSSALL,false);window.onmousewheel=document.onmousewheel=WheelSSALL</script>
 
 	</body>
 </html>
