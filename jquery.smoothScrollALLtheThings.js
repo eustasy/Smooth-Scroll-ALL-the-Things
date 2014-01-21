@@ -5,23 +5,23 @@ $(window).keydown(function (e) { // A Key has been Pressed
         switch (e.which) { // Figure out which one it is
             case 37:
                 // Left Arrow
-                handle(-200); // Scroll Up
+                HandleSSALL(-200); // Scroll Up
                 break; // Stop
             case 38:
                 // Up Arrow
-                handle(-200); // Scroll Up
+                HandleSSALL(-200); // Scroll Up
                 break; // Stop
             case 39:
                 // Right Arrow
-                handle(200); // Scroll Down
+                HandleSSALL(200); // Scroll Down
                 break; // Stop
             case 40:
                 // Down Arrow
-                handle(200); // Scroll Down
+                HandleSSALL(200); // Scroll Down
                 break; // Stop
             case 32:
                 // Space
-                handle(500); // Scroll Down
+                HandleSSALL(500); // Scroll Down
                 break; // Stop
             default:
                 return; // If it wasn't any of those, carry on.
@@ -31,22 +31,22 @@ $(window).keydown(function (e) { // A Key has been Pressed
 });
 
 // Mousewheel Listener
-if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
-window.onmousewheel = document.onmousewheel = wheel;
+if (window.addEventListener) window.addEventListener('DOMMouseScroll', WheelSSALL, false);
+window.onmousewheel = document.onmousewheel = WheelSSALL;
 
 // Wheel Function
-function wheel(event) {
-    var delta = 0;
-    if (event.wheelDelta) delta = -event.wheelDelta*2;
-    else if (event.detail) delta = event.detail*3;
-    handle(delta);
+function WheelSSALL(event) {
+    var deltaSSALL = 0;
+    if (event.wheelDelta) DeltaSSALL = -event.wheelDelta*2;
+    else if (event.detail) DeltaSSALL = event.detail*3;
+    HandleSSALL(DeltaSSALL);
     if (event.preventDefault) event.preventDefault();
 }
 
 // Handle Function
-function handle(delta) {
-    var time = 1000;
+function HandleSSALL(DeltaSSALL) {
+    var TimeSSALL = 1000;
     $('html, body').stop().animate({
-        scrollTop: $(window).scrollTop() + delta
-    }, time);
+        scrollTop: $(window).scrollTop() + DeltaSSALL
+    }, TimeSSALL);
 }
