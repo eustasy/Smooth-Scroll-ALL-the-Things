@@ -1,4 +1,21 @@
-// Smooth Scroll ALL the Things 0.32
+// Smooth Scroll ALL the Things 0.33
+
+// Handle Function
+function HandleSSALL(DeltaSSALL) {
+    var TimeSSALL = 200;
+    $('html, body').stop().animate({
+        scrollTop: $(window).scrollTop() + DeltaSSALL
+    }, TimeSSALL);
+}
+
+// Wheel Function
+function WheelSSALL(event) {
+    var deltaSSALL = 0;
+    if (event.wheelDelta) DeltaSSALL = -event.wheelDelta*2;
+    else if (event.detail) DeltaSSALL = event.detail*3;
+    HandleSSALL(DeltaSSALL);
+    if (event.preventDefault) event.preventDefault();
+}
 
 $(window).keydown(function (e) { // A Key has been Pressed
     if (
@@ -37,20 +54,3 @@ $(window).keydown(function (e) { // A Key has been Pressed
 // Mousewheel Listener
 if (window.addEventListener) window.addEventListener('DOMMouseScroll', WheelSSALL, false);
 window.onmousewheel = document.onmousewheel = WheelSSALL;
-
-// Wheel Function
-function WheelSSALL(event) {
-    var deltaSSALL = 0;
-    if (event.wheelDelta) DeltaSSALL = -event.wheelDelta*2;
-    else if (event.detail) DeltaSSALL = event.detail*3;
-    HandleSSALL(DeltaSSALL);
-    if (event.preventDefault) event.preventDefault();
-}
-
-// Handle Function
-function HandleSSALL(DeltaSSALL) {
-    var TimeSSALL = 200;
-    $('html, body').stop().animate({
-        scrollTop: $(window).scrollTop() + DeltaSSALL
-    }, TimeSSALL);
-}
