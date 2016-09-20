@@ -1,4 +1,5 @@
 // Smooth Scroll ALL the Things 0.33
+$(function() {
 
 // Handle Function
 function HandleSSALL(DeltaSSALL) {
@@ -54,3 +55,5 @@ $(window).keydown(function (e) { // A Key has been Pressed
 // Mousewheel Listener
 if (window.addEventListener) window.addEventListener('DOMMouseScroll', WheelSSALL, false);
 window.onmousewheel = document.onmousewheel = WheelSSALL;
+
+});
