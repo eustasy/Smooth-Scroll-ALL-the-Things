@@ -1,7 +1,11 @@
 // Smooth Scroll ALL the Things 0.32
 
 $(window).keydown(function (e) { // A Key has been Pressed
-    if (e.target.tagName.toLowerCase() !== 'input' && e.target.tagName.toLowerCase() !== 'textarea') { // If it's not in a input or textarea
+    if (
+        e.target.tagName.toLowerCase() !== 'input' &&
+        e.target.tagName.toLowerCase() !== 'textarea' &&
+        e.target.tagName.toLowerCase() !== 'select'
+    ) { // If it's not in a input or textarea or select
         switch (e.which) { // Figure out which one it is
             case 37:
                 // Left Arrow
@@ -45,7 +49,7 @@ function WheelSSALL(event) {
 
 // Handle Function
 function HandleSSALL(DeltaSSALL) {
-    var TimeSSALL = 1000;
+    var TimeSSALL = 200;
     $('html, body').stop().animate({
         scrollTop: $(window).scrollTop() + DeltaSSALL
     }, TimeSSALL);
