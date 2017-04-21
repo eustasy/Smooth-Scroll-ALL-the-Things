@@ -13,7 +13,7 @@ function HandleSSALL(DeltaSSALL) {
 function WheelSSALL(event) {
     var deltaSSALL = 0;
     if (event.wheelDelta) DeltaSSALL = -event.wheelDelta*2;
-    else if (event.detail) DeltaSSALL = event.detail*3;
+    else if (event.detail) DeltaSSALL = event.detail*80;
     HandleSSALL(DeltaSSALL);
     if (event.preventDefault) event.preventDefault();
 }
